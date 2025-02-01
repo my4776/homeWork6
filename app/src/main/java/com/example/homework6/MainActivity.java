@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView iv;
     Random rnd;
 
+    int num;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +27,23 @@ public class MainActivity extends AppCompatActivity {
         btn.findViewById(R.id.btn);
         iv.findViewById(R.id.iv);
         rnd= new Random ();
+        num = 0;
     }
 
     public void Albert(View view) {
-
+        num = rnd.nextInt(3)+1;
+        btn.setText(String.valueOf(num));
+        if(num==1)
+        {
+            iv.setImageResource(R.drawable.number1);
+        }
+        else if(num==2)
+        {
+            iv.setImageResource(R.drawable.number2);
+        }
+        else
+        {
+            iv.setImageResource(R.drawable.number3);
+        }
     }
 }
